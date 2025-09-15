@@ -35,6 +35,7 @@ public class Main {
 
         boolean aux = true;
         do {
+            System.out.println("");
             System.out.println("----------------------------------");
             System.out.println("Biblioteca los tres mostequeros");
             System.out.println("1. Mostrar libros disponibles");
@@ -43,6 +44,7 @@ public class Main {
             System.out.println("4. Registrar usuarios");
             System.out.println("5. Pedir prestado libros");
             System.out.println("6. Devolver libros");
+            System.out.println("7. Libros prestados por usuario ");
             System.out.println("0. Salir");
             System.out.println("----------------------------------");
 
@@ -78,6 +80,11 @@ public class Main {
                     System.out.println("Ingresar el ID del libro a devolver");
                     int idDevolver = entrada.nextInt();
                     biblioteca.devolverLibro(idDevolver);
+                    break;
+                case 7:
+                    System.out.println("Ingresar el ID del usuario a revisar");
+                    int idBuscar = entrada.nextInt();
+                    biblioteca.mostrarLibrosPrestadosUsuarios(idBuscar);
                     break;
                 case 0:
                     aux = false;

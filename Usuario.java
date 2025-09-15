@@ -106,12 +106,12 @@ public class Usuario {
     }
 
     public void mostrarLibrosPrestadosUsuarioS() {
+        System.out.println("Libros prestados:");
         if (librosPrestados.isEmpty()) {
             System.out.println("No ha pedido prestados.");
         } else {
-            System.out.println("Libros prestados:");
             for (Libro libro : librosPrestados) {
-                System.out.printf("El libro %s fue prestado y añadido a tu id (%d)", libro.getTitulo(), id);
+                System.out.printf("El libro %s esta prestado a %s. %n", libro.getTitulo(), nombre);
             }
         }
     }
