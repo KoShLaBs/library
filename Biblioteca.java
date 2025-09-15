@@ -73,10 +73,6 @@ public class Biblioteca {
         }
     }
 
-    public String apartarLibro() {
-        return "";
-    }
-
     // Metodos para usuario
 
     public void agregarUsuario(Usuario usuario) {

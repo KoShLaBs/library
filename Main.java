@@ -59,10 +59,42 @@ public class Main {
                     biblioteca.mostrarUsuariosDisponibles();
                     break;
                 case 3:
-
+                    System.out.println(" Se va a agregar un nuevo libro \n ingresa los siguientes datos: ");
+                    Libro nuevoLibro = new Libro();
+                    System.out.println("ID: ");
+                    nuevoLibro.setId(entrada.nextInt());
+                    System.out.println("Titulo: ");
+                    nuevoLibro.setTitulo(entrada.next());
+                    System.out.println("Genero: ");
+                    nuevoLibro.setCategoria(entrada.next());
+                    System.out.println("Clasificacion: ");
+                    nuevoLibro.setRestriccion(entrada.next());
+                    System.out.println("Autor: ");
+                    nuevoLibro.setAutor(entrada.next());
+                    System.out.println("Editorial: ");
+                    nuevoLibro.setEditorial(entrada.next());
+                    System.out.println("Año de publicacion: ");
+                    nuevoLibro.setAnio(entrada.nextInt());
+                    System.out.println("Cantidad de copias: ");
+                    nuevoLibro.setCantidad(entrada.nextInt());
+                    biblioteca.agregarLibro(nuevoLibro);
+                    System.out.println("El libro " + nuevoLibro.getTitulo() + " Con el ID" + nuevoLibro.getId()
+                            + " Ha sido agregado exitosamente ");
                     break;
                 case 4:
-
+                    System.out.print("ID: ");
+                    int id = entrada.nextInt();
+                    entrada.nextLine();
+                    System.out.print("Fecha nacimiento: ");
+                    String fecha = entrada.nextLine();
+                    System.out.print("Nombre: ");
+                    String nombre = entrada.nextLine();
+                    System.out.print("Correo: ");
+                    String correo = entrada.nextLine();
+                    System.out.print("Teléfono: ");
+                    String tel = entrada.nextLine();
+                    Usuario nuevo = new Usuario(id, fecha, nombre, correo, tel);
+                    biblioteca.agregarUsuario(nuevo);
                     break;
                 case 5:
                     System.out.println("Ingresar el ID del libro que se va a prestar");
@@ -88,6 +120,9 @@ public class Main {
                     break;
                 case 0:
                     aux = false;
+                    break;
+                default:
+                    System.out.println("No ingresaste una opción valida, intente de nuevo");
                     break;
             }
         } while (aux == true);
